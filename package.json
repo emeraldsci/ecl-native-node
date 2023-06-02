@@ -8,6 +8,7 @@
     "build": "tsc",
     "watch": "tsc --watch",
     "install": "npm run rebuild",
+    "install-cmake": "cmake-js compile -D",
     "rebuild": "node-gyp rebuild",
     "rebuild-dev": "npm run rebuild -- --debug",
     "prepublishOnly": "npm run rebuild",
@@ -32,13 +33,22 @@
   "homepage": "https://github.com/sentialx/node-window-manager#readme",
   "devDependencies": {
     "@types/node": "13.11.1",
-    "node-gyp": "^6.1.0",
+    "cmake-js": "7.2.1",
+    "node-gyp": "9.3.1",
     "tslint": "6.1.1",
     "typescript": "3.8.3"
   },
   "dependencies": {
-    "extract-file-icon": "^0.3.2",
-    "node-addon-api": "2.0.0",
-    "node-gyp-build": "^4.2.1"
+    "extract-file-icon": "0.3.2",
+    "node-addon-api": "6.1.0",
+    "node-gyp-build": "4.6.0"
+  },
+  "binary": {
+    "napi_versions": 8
+  },
+  "cmake-js": {
+    "runtime": "nw",
+    "runtimeVersion": "0.75.0",
+    "arch": "x64"
   }
 }
